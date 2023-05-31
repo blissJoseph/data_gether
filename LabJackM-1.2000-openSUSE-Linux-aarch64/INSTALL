@@ -1,0 +1,23 @@
+===========
+LJM Install
+===========
+
+To install the LabJackM (LJM) driver/library, run the LabJackM.run script
+located in this directory:
+
+  $ sudo ./LabJackM.run
+
+
+LabJackM.run will copy all .so library files to the correct locations, set up
+device rule files, and set permissions.
+
+Additionally, LabJackM.run will create a directory named LabJackM,
+which contains all of the files that were installed, as well as some example
+programs in LabJackM/examples and a local copy of SCons
+(http://www.scons.org/).
+
+
+LabJackM.run is a Makeself script. For more information, see
+
+  http://megastep.org/makeself/
+
