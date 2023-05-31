@@ -68,11 +68,11 @@ try:
         delta = ss - timedelta(hours=1)
         
         try:
-            os.remove('stream%s_%s_%s.csv' %(delta.day, delta.hour, delta.minute))
+            os.remove('stream{}_{}_{}.csv'.format(delta.strftime('%d'), delta.strftime('%H'), delta.strftime('%M')))
         except OSError:
             pass
         
-        f = open('stream%s_%s_%s.csv' %(ss.day, ss.hour, ss.minute), 'a+')
+        f = open('stream{}_{}_{}.csv'.format(ss.strftime('%d'), ss.strftime('%H'), ss.strftime('%M')), 'a+')
         #print (f.tell())
    
         ret = ljm.eStreamRead(handle)
