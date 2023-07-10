@@ -68,11 +68,11 @@ try:
         delta = ss - timedelta(hours=1)
         
         try:
-            os.remove('stream{}_{}_{}.csv'.format(delta.strftime('%d'), delta.strftime('%H'), delta.strftime('%M')))
+            os.remove('/media/pi/SAMSUNG/csv/stream{}_{}_{}_{}_{}.csv'.format(ss.strftime('%Y'), ss.strftime('%m'), ss.strftime('%d'), ss.strftime('%H'), ss.strftime('%M')))
         except OSError:
             pass
         
-        f = open('stream{}_{}_{}.csv'.format(ss.strftime('%d'), ss.strftime('%H'), ss.strftime('%M')), 'a+')
+        f = open('/media/pi/SAMSUNG/csv/stream{}_{}_{}_{}_{}.csv'.format(ss.strftime('%Y'), ss.strftime('%m'), ss.strftime('%d'), ss.strftime('%H'), ss.strftime('%M')), 'a+')
         #print (f.tell())
    
         ret = ljm.eStreamRead(handle)
@@ -126,7 +126,7 @@ except Exception:
     e = sys.exc_info()[1]
     print(e)
 
-print("Start Time :" , start , "," , "Finish Time :" , end , "," , "The time required :" , (end - start))
+#print("Start Time :" , start , "," , "Finish Time :" , end , "," , "The time required :" , (end - start))
 
 # Close handle
 ljm.close(handle)
